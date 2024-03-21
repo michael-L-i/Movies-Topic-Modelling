@@ -5,3 +5,8 @@ Topic Modeling has been a common technique in identifying topics within textual 
 For example, passing a movie like Shawshank Redemption may produce topic categories such as 'Acting,' 'Cinematic Production,' 'Character Development,' 'Friendship,' 'Hope,' etc. and provide each with a sentiment analysis score. BERTopic was the primary library used for topic modeling, OpenAI's Completion API was used to assign simple labels to textual clusters, and NLTK was used for sentiment analysis. 
 
 The utilization is as simple as entering a specific movie name and a sentiment chart for each topic will be outputted.
+
+KEY INSIGHT: 
+In our model, we arbitrarily split review texts into chunks of 3 sentences or less. This was because reviews often contain many themes, which would be difficult to assign one single theme to the original review. While arbitarily splitting may cut into context that the review originally had, BERTopic is well fitted for this because these 'out-of-context' segments are removed when forming topic clusters.
+
+However, it was found to be important in conducting sentiment analysis on the original document and tie it to all its text segments rather on those text chunks. It still often produced great results as it was found that individuals tend to mention elements that match their overall sentiment of the movie (i.e. skip over the negative elements if they highly enjoyed the movie).
